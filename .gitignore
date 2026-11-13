@@ -1,0 +1,37 @@
+# 构建产物
+.build/
+.build-venv/
+.pyinstaller-cache/
+dist/
+build/
+build-*/
+dmg-src/
+*.dmg
+wcdl-worker.spec
+
+# app 构建中间物与组装出的 bundle（由 app/install.sh 生成）
+app/.build/
+app/.build-venv/
+app/ChannelsWatch.app/
+
+# 大文件二进制：ffmpeg/ffprobe 静态构建（构建时放这里，不入 git）
+vendor/*.zip
+vendor/ffmpeg
+vendor/ffprobe
+
+# 运行时产物
+__pycache__/
+*.pyc
+.DS_Store
+.state/
+
+# 本地开发与早期实验文件（不随源码分发）
+HANDOFF.md
+local/
+bin/
+scripts/
+wcdl.py
+wcdl_proxy.py
+notify_wechat.py
+patch_skill_blob.py
+dsh-plugin/
