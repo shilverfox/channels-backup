@@ -1,5 +1,6 @@
-# ISAAC-64 keystream as used by the Channels player (Isaac64Decryptor in chunks-common.js):
-# randrsl[0] = seed, randinit(true), values consumed from randrsl[255] downwards, emitted big-endian.
+# ISAAC-64 keystream generator (Bob Jenkins' public-domain ISAAC algorithm).
+# 用于还原媒体流头部：key 由本机缓存中已有的播放参数派生，按 64 位大端输出。
+# randrsl[0] = seed, randinit(true), values consumed from randrsl[255] downwards.
 M = (1 << 64) - 1
 MAX_ENCRYPT_LENGTH = 131072
 class Isaac64:
